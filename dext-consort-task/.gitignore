@@ -11,7 +11,7 @@ logs/
 .env
 
 # Visual Studio Code settings
-.vscode/
+./vscode/
 
 # Mac OS specific files
 .DS_Store
@@ -23,5 +23,3 @@ logs/
 *.njsproj
 *.sln
 
-# Typescript compiled files
-dist/
