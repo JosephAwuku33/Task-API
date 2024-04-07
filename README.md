@@ -11,6 +11,7 @@ This is a simple REST API that allows a user to create tasks, delete tasks, upda
 - Mongo DB
 - Swagger UI
 - Typescript
+- Render for Hosting
 
 ## Run Locally
 
