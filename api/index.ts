@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/tasks", taskRouter);
 
 const spacs = swaggerjsdoc(options);
-app.use("/api-docs", swaggerui.serve, swaggerui.setup(spacs));
+app.use("/", swaggerui.serve, swaggerui.setup(spacs));
 app.listen(port, () => {
   console.log(chalk.yellowBright(`Server listening on port ${port}`));
 });
