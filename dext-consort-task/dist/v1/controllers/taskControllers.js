@@ -18,7 +18,7 @@ const getAllTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     try {
         const tasks = yield Task.find();
         if (!tasks) {
-            res.json({ message: "No task available" });
+            res.status(404).json({ message: "No task available" });
         }
         res.json(tasks);
     }
@@ -41,8 +41,7 @@ const createNewTask = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         const { title, description, dueDate, status } = req.body;
         // validate the input given
         if (!title || !description || !dueDate || !status) {
-            res.status(400);
-            throw new Error("Please add all fields");
+            res.status(400).json({ message: "Please add all the required fields" });
         }
         const newTask = yield Task.create({
             title,

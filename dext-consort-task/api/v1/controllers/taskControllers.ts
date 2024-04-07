@@ -12,7 +12,7 @@ const getAllTask = async (req: Request, res: Response) => {
   try {
     const tasks = await Task.find();
     if (!tasks) {
-      res.json({ message: "No task available" });
+      res.status(404).json({ message: "No task available" });
     }
     res.json(tasks);
   } catch (err) {
@@ -37,8 +37,7 @@ const createNewTask = async (req: Request, res: Response) => {
 
     // validate the input given
     if (!title || !description || !dueDate || !status) {
-      res.status(400);
-      throw new Error("Please add all fields");
+      res.status(400).json({ message: "Please add all the required fields" });
     }
 
     const newTask = await Task.create({

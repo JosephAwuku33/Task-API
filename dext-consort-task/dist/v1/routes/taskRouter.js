@@ -46,6 +46,8 @@
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Task'
+ *       404:
+ *          description: No task is available at the moment
  *   post:
  *     summary: Create a new task
  *     tags: [Tasks]
