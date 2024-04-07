@@ -58,4 +58,5 @@ To run tests, run the following command
 ```bash
   npm run test
 ```
-
+## Take note
+**Inactivity of the REST API would result in a 50 second delay when you try to access the API, because it was hosted on a free tier version of Render**
