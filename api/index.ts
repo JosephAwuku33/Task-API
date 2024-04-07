@@ -3,6 +3,7 @@ import express, { Express, Request, Response } from "express";
 import taskRouter from "./v1/routes/taskRouter.js";
 import { connectDB } from "./v1/config/dbCon.js";
 import chalk from "chalk";
+import cors from "cors";
 import bodyParser from "body-parser";
 import swaggerjsdoc, { Options } from "swagger-jsdoc";
 import swaggerui from "swagger-ui-express";
@@ -13,6 +14,7 @@ const app: Express = express();
 const port = process.env.API_PORT || 3000;
 connectDB();
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use(express.urlencoded({ extended: true }));
